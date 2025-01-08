@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Delete Account | GenZ Chats{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/delete_account.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="delete-account-page">
+    <h2>Delete Account <i class="fa-solid fa-triangle-exclamation" style="color: #d10000;"></i></h2>
+    <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn danger">Yes, Delete My Account</button>
+        <a href="{% url 'account' %}" class="btn cancel">Cancel</a>
+    </form>
+</div>
+{% endblock %}

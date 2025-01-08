@@ -1,0 +1,93 @@
+/* General reset and font */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Auth page container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.auth-box {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    text-align: center;
+    width: 400px;
+}
+
+.auth-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+}
+
+form p {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+form p label{
+    display: none;
+}
+form p input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+}
+
+form p input::placeholder {
+    color: #d1d1d1;
+}
+
+form p input:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-auth {
+    background: linear-gradient(135deg, #00ccff, #00ff99);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-auth:hover {
+    background-color: #00bcd4;
+}
+
+.auth-box p {
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Links */
+.auth-box p a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-box p a:hover {
+    color: #59ecff;
+}

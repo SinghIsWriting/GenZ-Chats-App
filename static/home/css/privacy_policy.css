@@ -1,0 +1,81 @@
+/* General reset and font */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+}
+
+.container header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h1{
+    margin-bottom: 10px;
+}
+
+.content {
+    padding: 20px;
+    color: #fff;
+    /* text-align: center; */
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content ul li{
+    list-style: none;
+}
+
+.content p {
+    color: #fff;
+    margin-top: 5px;
+}
+
+/* Links */
+.content p a {
+    color: #59ecff;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: white;
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.content p a:hover {
+    color: white;
+    background-color: black;
+}
+
+.content .alert-success{
+    color: greenyellow;
+}
+
+.content .alert-danger{
+    color: red;
+}
+
+

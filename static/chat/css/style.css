@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff6600, #00ffff, #ff00ff);
+    background-size: 400% 400%;
+    animation: gradient-animation 8s ease infinite;
+}
+
+/* Keyframes for a smooth animated gradient transition */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.sidebar {
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px;
+    color: white;
+    border-radius: 0 6px 6px 0;
+    position: absolute;
+    top: 9.5%;
+    bottom: 11.8%;
+    left: 0;
+    z-index: 300;
+    overflow-y: auto;
+    scrollbar-width: none;
+    scrollbar-color: #333 #f7f7f700;
+    --webkit-scrollbar-width: none;
+    --webkit-scrollbar-color: #333 #f7f7f7;
+    /* box-shadow: 0 8px 32px 0 rgba(166, 0, 255, 0.37); */
+    scroll-behavior: smooth;
+}
+
+.sidebar #users-list {
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    scrollbar-color: #333 #f7f7f7;
+    --webkit-scrollbar-width: none;
+    --webkit-scrollbar-color: #333 #f7f7f7;
+    scroll-behavior: smooth;
+}
+
+.sidebar #users-list li {
+    cursor: pointer;
+    padding: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 6px;
+    border-radius: 6px;
+    box-shadow: 0 8px 12px 0 rgba(31, 38, 135, 0.37);
+    transition: transform 0.5s ease; /* Smooth transition for size change */
+}
+
+.sidebar #users-list li:active {
+    transform: scale(0.9); /* Reduces size to 90% when clicked */
+}
+
+li .fa-user{
+    border: 1.5px solid white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+li .user-info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: start;
+}
+
+#users-list li:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+li .last-essage-time{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #d6d6d6;
+}
+
+/* Styling the entire user list item */
+li.user {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+li.user:hover {
+    background-color: #eaeaea; /* Hover effect to highlight the user */
+}
+
+/* Styling for the username */
+li.user .user-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Styling for the last message */
+li.user .last-message {
+    font-size: 14px;
+    flex-grow: 1;      /* Take up remaining space for the message */
+    white-space: nowrap; /* Keep text in a single line */
+    overflow: hidden;    /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ... for overflowing text */
+}
+
+/* Styling for the timestamp */
+li.user .timestamp {
+    font-size: 12px;
+    min-width: 50px;   /* Ensure timestamp takes up fixed space */
+    text-align: right; /* Align the timestamp to the right */
+}
+
+
+.chat-header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    cursor: move;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-window {
+    position: absolute;
+    width: 450px;
+    height: 580px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    padding: 10px;
+    bottom: 100px;
+    right: 150px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    overflow-y: auto;
+    animation: float-chat 4s ease-in-out infinite alternate;
+    z-index: 301;
+    /* text-align: center; */
+}
+
+/* Float animation for the chat window */
+@keyframes float-chat {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-20px); }
+}
+
+/* .messages {
+    height: 90%;
+    overflow-y: scroll;
+} */
+
+.messages {
+    height: calc(100% - 80px);
+    overflow: auto;
+    scrollbar-width: none;
+    scrollbar-color: #333 #f7f7f7;
+    --webkit-scrollbar-width: none;
+    --webkit-scrollbar-color: #333 #f7f7f7;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth; 
+}
+
+.message {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Sent message - aligned to the right */
+.messages .sent {
+    align-self: flex-end;  /* Align to the right */
+    color: black;
+    animation: slideInRight 0.5s ease;
+    background: linear-gradient(135deg, #00ccff, #00ff99);
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px 0;
+}
+
+/* Received message - aligned to the left */
+.messages .received {
+    align-self: flex-start; /* Align to the left */
+    color: white;
+    animation: slideInLeft 0.5s ease;
+    background: linear-gradient(135deg, #e028a3, #ea8d01);
+    /* background: linear-gradient(135deg, #ff66cc, #ff9900); */
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px 0;
+}
+
+.messages .sent .timestamp {
+  font-size: 0.8em;
+  color: #404040;
+  align-self: flex-end;
+}
+.messages .received .timestamp {
+  font-size: 0.8em;
+  color: #dcdcdc;
+  align-self: flex-end;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+#messageInputDiv {
+    width: calc(100% - 22px);
+    padding: 5px;
+    /* border: 1px solid #333; */
+    border-radius: 1.15rem;
+    margin-right: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: white;
+}
+
+form {
+    display: none;
+    justify-content: start;
+    align-items: center;
+    transition: display 2s ease;
+}
+
+form label {
+    display: none;
+}
+
+form div{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 6px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+#messageInput:focus, input:focus {
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+#sendButton {
+    width: 60px;
+    padding: 11px;
+    border: none;
+    outline: none;
+    border-radius: 1.2rem;
+    background-color: #00d4ff;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-weight: 600;
+}
+
+#sendButton:hover {
+    background-color: #00bcd4;
+}
+
+/* .sent {
+    background-color: #00aaff;
+    color: white;
+    animation: slideInRight 0.5s ease;
+    text-align: right;
+}
+
+.received {
+    background-color: #dddddd;
+    color: black;
+    animation: slideInLeft 0.5s ease;
+    text-align: left;
+} */

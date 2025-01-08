@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | GenZ Chats{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static "home/css/style.css" %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Main Section with fancy images and slides -->
+    <div class="main-section">
+        <h1>Welcome to GenZ Chats</h1>
+        <p>A place where communication meets innovation</p>
+
+        <!-- Slideshow -->
+        {% comment %} <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="{% static 'landing_page/images/bg-image1.jpg' %}" alt="Fancy Image 1">
+            </div>
+            <div class="mySlides">
+                <img src="{% static 'landing_page/images/bg-image2.jpg' %}" alt="Fancy Image 2">
+            </div>
+            <div class="mySlides">
+                <img src="{% static 'landing_page/images/bg-image3.jpg' %}" alt="Fancy Image 3">
+            </div>
+        </div> {% endcomment %}
+
+        <!-- Button to redirect to chat page -->
+        <div class="button-container">
+            {% if request.user.is_authenticated %}
+            <a href="{% url "chat" %}">
+                <button class="redirect-button">Enter Chatroom</button>
+            </a>
+            {% else %}
+            <a href="{% url "register" %}">
+                <button class="redirect-button">Signup for Chatroom</button>
+            </a> 
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <!-- JavaScript for slideshow -->
+    <script>
+        {% comment %} let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        } {% endcomment %}
+    </script>
+{% endblock %}
+
+
+

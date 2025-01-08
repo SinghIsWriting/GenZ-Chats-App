@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Account - GenZ Chats{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/account.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="account-page">
+    {% comment %} <h2>Your Account</h2> {% endcomment %}
+    <div class="profile-form">
+        <div class="profile-details">
+            <img src="{% static "home/images/user.png" %}" alt="Profile Picture" class="profile-picture">
+            <h3>{{ user.username }}</h3>
+            <p>{{ user.email }}</p>
+        </div>
+
+        <div class="account-forms">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <h3>Update Account Details</h3>
+                {{ u_form.as_p }}
+                
+                <h3>Update Profile Picture & Bio</h3>
+                {{ p_form.as_p }}
+                
+                <button type="submit" class="todo btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="account-actions">
+        <h4>Other Actions</h4>
+        <div>
+            <a href="javascript:void(0);" class="todo" id="change-password-link">Change Password</a> 
+            <a href="{% url 'logout' %}">Logout</a> 
+            <a href="{% url "delete_account" %}" class="todo" id="delete-account-link">Delete Account</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+
+<script>
+
+    // Function to close the dialog box
+    document.getElementById('closeDialogButton').addEventListener('click', function() {
+        document.getElementById('dialogOverlay').style.display = 'none';
+    });
+
+    // Handle the not-implemented "Change Password" button
+    document.getElementById('change-password-link').addEventListener('click', function() {
+        showDialog('Change Password', 'The "Change Password" feature is not implemented yet. Stay tuned!');
+    });
+
+    {% comment %} // Handle the not-implemented "Delete Account" button
+    document.getElementById('delete-account-link').addEventListener('click', function() {
+        showDialog('Delete Account', 'The "Delete Account" feature is not implemented yet. Stay tuned!');
+    }); {% endcomment %}
+
+    // Prevent form submission for "Save Changes" if needed
+    document.querySelector('.btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        showDialog('Save Changes', 'This feature is under development and will be available soon!');
+    });
+    
+</script>
+
+{% endblock %}

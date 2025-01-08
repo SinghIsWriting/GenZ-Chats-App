@@ -1,0 +1,60 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Django specific
+*.log
+*.pot
+*.py[cod]
+db.sqlite3
+/media
+/staticfiles
+
+# Django migrations
+**/migrations/*
+
+# Ignore local settings
+local_settings.py
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore macOS system files
+.DS_Store
+
+# Node.js (if using)
+node_modules/
+
+# Coverage reports
+.coverage
+htmlcov/
+.coverage.*
+
+# Testing output
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Production settings
+.env

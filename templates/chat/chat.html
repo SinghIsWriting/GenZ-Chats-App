@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Chats | GenZ Chats{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'chat/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="sidebar">
+        <ul id="users-list">
+            <!-- Users loaded via AJAX will appear here -->
+             
+        </ul>
+    </div>
+
+    <div id="chatWindow" class="chat-window">
+        <input type="hidden" id="recipientId" value="2"> <!-- Replace with dynamic recipient ID -->
+        <div title="Drag chat window" id="chatHeader" class="chat-header">Hi ZenG! Let's Chat</div>
+        <div class="messages" id="messages">
+            <div class="message received">Hi, Welcome to ZenG Chats!!!</div>
+            <div class="message received">Start your chat now with any of the listed chats!</div>
+            
+            {% for message in messages %}
+                {% if message.sender == user %}
+                    <div class="message sent"> <strong>{{message.sender}}</strong> : {{ message.message }}</div>
+                {% else %}
+                    <div class="message received"><strong>{{message.sender}}</strong> : {{ message.message }}</div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+        <form class="messageInput" id="messageInputDiv" action="/chat/send_message/" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="sender_id" id="logged_in_user_id" value="">
+            <input type="hidden" name="receiver_id" id="other_user_id" value="">
+            <input type="text" class="messageInput" id="messageInput" placeholder="Type a message..." autocomplete="off"/>
+            <button title="send message..." id="sendButton">Send</button>
+        </form>
+        
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="{% static 'chat/js/chat.js' %}"></script>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About | GenZ Chats{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static "home/css/about.css" %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Main Container -->
+    <div class="about-container">
+        <section class="hero">
+            <div class="overlay">
+                <h1>Welcome to GenZ Chats</h1>
+                <h2>Where Creativity Meets conversation!</h2>
+                <p>At GenZ Chats, we're more than just another chat app. We're a vibrant, creative space where the next generation connects, collaborates, and shares their stories. Whether you're looking to chat with friends or meet new people, our platform is built to offer an experience that's fast, dynamic, and interactive, all wrapped in a style that's uniquely YOU.</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <h2>Our Mission</h2>
+            <p>
+                Our mission? Simple: empower Gen Z with a chat app that’s as lively, expressive, and creative as the community using it. We believe that communication should be fun, seamless, and unforgettable. With custom-designed features, interactive widgets, and sleek animations, GenZ Chats brings your social life to a whole new level!
+            </p>
+
+            <section class="content">
+                <h2>Who We Are</h2>
+                <p>GenZ Chats is the next-gen chat platform built to bring a unique and interactive experience. Our mission is to make conversations fun, dynamic, and expressive for the digital natives.</p>
+                
+                <h2>Our Vision</h2>
+                <p>We envision a world where communication is more than just text - it’s an immersive experience that encourages creativity, personal expression, and endless fun.</p>
+            </section>
+
+            <h2>Meet Our Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="{% static "home/images/abs.jpg" %}" alt="Founder">
+                    <h3><a href="https://linkedin.com/in/abhishek-singh-bba2662a9" target="_blank">Abhishek Singh</a></h3>
+                    <p>Lead Developer & Owner</p>
+                </div>
+                <div class="team-member">
+                    <img src="{% static "home/images/user.png" %}" alt="CTO">
+                    <h3>ABC Person</h3>
+                    <p>Chief Technology Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="{% static "home/images/user.png" %}" alt="Community Manager">
+                    <h3>XYZ Person</h3>
+                    <p>Community Manager</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Us Section -->
+        <section class="join-section">
+            <h2>Be Part of the Revolution</h2>
+            <p>
+                Ready to take the next step? Whether you're a user or a developer, GenZ Chats is always growing and evolving. Follow us on social media, or reach out to join our developer community and help us build the future of chat.
+            </p>
+            <a href="{% url "contactus" %}">Contact Us</a>
+        </section>
+
+    </div>
+
+  {% comment %} <div class="container">
+    <header>
+      <h1>About GenZ_Chats</h1>
+      <p>Where creativity meets conversation!</p>
+    </header>
+    <!-- About Us Section -->
+    <section class="about-section">
+        <h1>Welcome to GenZ_Chats!</h1>
+        <p>
+            At GenZ_Chats, we're more than just another chat app. We're a vibrant, creative space where the next generation connects, collaborates, and shares their stories. Whether you're looking to chat with friends or meet new people, our platform is built to offer an experience that's fast, dynamic, and interactive, all wrapped in a style that's uniquely YOU. 
+        </p>
+        <p>
+            Our mission? Simple: empower Gen Z with a chat app that’s as lively, expressive, and creative as the community using it. We believe that communication should be fun, seamless, and unforgettable. With custom-designed features, interactive widgets, and sleek animations, GenZ_Chats brings your social life to a whole new level!
+        </p>
+    </section>
+    <section class="content">
+      <h2>Who We Are</h2>
+      <p>GenZ_Chats is the next-gen chat platform built to bring a unique and interactive experience. Our mission is to make conversations fun, dynamic, and expressive for the digital natives.</p>
+      
+      <h2>Our Vision</h2>
+      <p>We envision a world where communication is more than just text—it’s an immersive experience that encourages creativity, personal expression, and endless fun.</p>
+    </section>
+
+    <!-- Meet Our Development Team Section -->
+    <section class="team-section">
+        <h2>Meet the Team Behind the Magic</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="developer1.jpg" alt="Team Member 1">
+                <h3>Abhishek Singh</h3>
+                <p>Lead Developer & Full Stack Guru</p>
+            </div>
+            <div class="team-member">
+                <img src="developer2.jpg" alt="Team Member 2">
+                <h3>Jane Doe</h3>
+                <p>UI/UX Designer & Front-End Specialist</p>
+            </div>
+            <div class="team-member">
+                <img src="developer3.jpg" alt="Team Member 3">
+                <h3>John Smith</h3>
+                <p>Back-End Engineer & Database Expert</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="join-section">
+        <h2>Be Part of the Revolution</h2>
+        <p>
+            Ready to take the next step? Whether you're a user or a developer, GenZ_Chats is always growing and evolving. Follow us on social media, or reach out to join our developer community and help us build the future of chat.
+        </p>
+        <a href="contact.html">Contact Us</a>
+    </section>
+  </div> {% endcomment %}
+    
+{% endblock content %}
+
+{% block js %}
+    <!-- JavaScript for slideshow -->
+    <script>
+
+    </script>
+{% endblock %}
+
+
+

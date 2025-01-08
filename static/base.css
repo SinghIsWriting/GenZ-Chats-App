@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff6600, #00ffff, #ff00ff);
+    background-size: 400% 400%;
+    animation: gradient-animation 8s ease infinite;
+
+}
+
+/* Keyframes for a smooth animated gradient transition */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navbar styles */
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar .logo .brand{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .logo .page-link{
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo .page-link:hover{
+    color: rgb(173, 173, 173);
+    
+}
+
+.navbar .user-info{
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.navbar .user-info:hover {
+    background-color: #008cba;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 201;
+    top: 100%; /* Position it below the profile button */
+    right: 0;  /* Align it to the right of the button */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* Show the dropdown when the profile button is clicked */
+.show {
+    display: block;
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer .footer-links, .social-media-links {
+    list-style: none;
+    padding: 5px;
+}
+
+.footer .footer-links li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer .footer-links a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-links a i {
+    margin-right: 5px;
+}
+
+.footer .footer-links a:hover {
+    color: white;
+}
+
+
+/* Overlay for the dialog box */
+.dialog-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dialog box styling */
+.custom-dialog {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease;
+}
+
+.custom-dialog h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.custom-dialog p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.dialog-button {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    border: 2px solid white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.dialog-button:hover {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+/* Animation for the dialog */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}

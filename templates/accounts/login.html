@@ -1,0 +1,25 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login - GenZ Chats{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2>Login</h2>
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn-auth">Login</button>
+            </form>
+            <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+        </div>
+    </div>
+{% endblock content %}
+

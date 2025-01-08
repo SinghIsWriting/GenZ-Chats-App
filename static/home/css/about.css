@@ -1,0 +1,318 @@
+/* *{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Arial', sans-serif;
+}
+
+body {
+margin: 0;
+padding: 0;
+font-family: 'Arial', sans-serif;
+height: 100vh;
+background: linear-gradient(135deg, #ff6600, #00ffff, #ff00ff);
+background-size: 400% 400%;
+animation: gradient-animation 8s ease infinite;
+}
+
+.container{
+width: 80vw;
+margin: auto;
+position: absolute;
+top: 100px;
+bottom: 100px;
+left: 100px;
+right: 100px;
+color: white;
+}
+
+.about-section {
+padding: 100px 20px;
+text-align: center;
+color: white;
+background: linear-gradient(135deg, rgba(255, 102, 0, 0.8), rgba(0, 255, 255, 0.8), rgba(255, 0, 255, 0.8));
+background-size: 400% 400%;
+animation: gradient-animation 8s ease infinite;
+}
+
+.about-section h1 {
+font-size: 50px;
+margin-bottom: 20px;
+}
+
+.about-section p {
+font-size: 18px;
+line-height: 1.6;
+margin-bottom: 40px;
+}
+
+.team-section {
+padding: 50px 20px;
+background-color: rgba(0, 0, 0, 0.85);
+}
+
+.team-section h2 {
+font-size: 40px;
+color: #ff6600;
+margin-bottom: 30px;
+}
+
+.team-members {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+.team-member {
+text-align: center;
+width: 250px;
+margin: 20px;
+}
+
+.team-member img {
+border-radius: 50%;
+width: 150px;
+height: 150px;
+object-fit: cover;
+border: 4px solid #ff6600;
+}
+
+.team-member h3 {
+color: white;
+margin-top: 15px;
+font-size: 22px;
+}
+
+.team-member p {
+color: #ccc;
+font-size: 16px;
+margin-top: 5px;
+}
+
+.join-section {
+background-color: rgba(255, 0, 255, 0.8);
+color: white;
+padding: 50px 20px;
+text-align: center;
+}
+
+.join-section h2 {
+font-size: 36px;
+margin-bottom: 20px;
+}
+
+.join-section p {
+font-size: 18px;
+margin-bottom: 30px;
+}
+
+.join-section a {
+color: white;
+font-size: 18px;
+background-color: #ff6600;
+padding: 10px 20px;
+border-radius: 5px;
+text-decoration: none;
+}
+
+.join-section a:hover {
+background-color: #ff00ff;
+} */
+
+*{
+    padding: 0;
+    margin: 0;
+    border: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 20px;
+    position: relative;
+    top: 0px;
+    bottom: 100px;
+    margin-bottom: 100px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('/static/home/images/bg-image2.jpg') center/cover no-repeat;
+    color: white;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero .overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    width: 80%;
+    font-size: 1rem;
+    margin-bottom: 0;
+    margin: auto;
+    margin-top: 20px;
+}
+
+/* About Content */
+.about-content {
+    padding: 40px 0;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.feature-item {
+    flex-basis: 30%;
+    text-align: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-item i {
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Team Section */
+.team {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-member {
+    text-align: center;
+    flex-basis: 30%;
+    padding: 10px;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.team-member a{
+    text-decoration: none;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.join-section {
+background: linear-gradient(135deg, #6a11cb, #2575fc);
+color: white;
+padding: 30px 10px;
+text-align: center;
+border-radius: 6px;
+position: relative;
+bottom: 75px;
+/* margin-bottom: 70px; */
+}
+
+.join-section h2 {
+font-size: 36px;
+margin-bottom: 20px;
+}
+
+.join-section p {
+font-size: 18px;
+margin-bottom: 30px;
+}
+
+.join-section a {
+color: white;
+font-size: 18px;
+padding: 10px 20px;
+border-radius: 5px;
+border: 1px solid white;
+text-decoration: none;
+}
+
+.join-section a:hover {
+background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .hero .overlay h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .features {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .team {
+        align-items: center;
+        flex-direction: column;
+    }
+    .join-section {
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+        background-color: white;
+        color: black;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+    .join-section h2{
+        font-size: 2rem;
+    }
+    .join-section p{
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+

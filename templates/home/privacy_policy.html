@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Privacy Policy | GenZ Chats{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static "home/css/privacy_policy.css" %}">
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <header>
+      <h1>Privacy Policy</h1>
+      <p>Your privacy is our priority.</p>
+    </header>
+    <section class="content">
+      <div>
+        <h2>Introduction</h2>
+      <p>This privacy policy outlines how GenZ Chats collects, uses, and protects your information when you use our platform.</p>
+      </div>
+      
+      <div>
+        <h2>Information We Collect</h2>
+      <ul>
+        <li>Personal Information (e.g., Name, Email)</li>
+        <li>Chat Data</li>
+        <li>Usage Data (e.g., Cookies, Log Files)</li>
+      </ul>
+      </div>
+      
+      <div>
+        <h2>How We Use Your Information</h2>
+        <p>We use the data to improve our services, personalize your experience, and ensure the platform’s security.</p>
+      </div>
+      
+
+      <div>
+        <h2>Contact Us</h2>
+        <p>If you have any questions regarding this privacy policy, feel free to <a href="{% url "contactus" %}">contact us</a>.</p>
+      </div>
+      
+    </section>
+
+  </div>
+    
+{% endblock content %}
+
+{% block js %}
+    <!-- JavaScript for slideshow -->
+    <script>
+
+    </script>
+{% endblock %}
+

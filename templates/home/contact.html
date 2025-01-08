@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us | GenZ Chats{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static "home/css/contact.css" %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <header>
+      <p>Have a question? We're here to help!</p>
+    </header>
+    <section class="content">
+      <h1>Contact Us</h1>
+      {% if thanks %}
+      <p class="{{thanks}}">Failed! please fill all options and then submit.</p>
+      {% elif thank %}
+      <p class="{{thank}}">Thanks for contacting us, we will back to you soon.</p>
+      {% endif %}
+
+      <form id="contactForm" action="{% url "contactus" %}" method="post">
+        {% csrf_token %}
+        <p>
+          {% comment %} <label for="name">Name:</label> {% endcomment %}
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </p>
+        <p>
+          {% comment %} <label for="email">Email:</label> {% endcomment %}
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </p>
+        <p>
+          {% comment %} <label for="phone">phone:</label> {% endcomment %}
+          <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+        </p>
+        <p>
+          {% comment %} <label for="message">Message:</label> {% endcomment %}
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </p>
+        <button type="submit" class="sendBtn">Send Message</button>
+      </form>
+    </section>
+
+  </div>
+    
+{% endblock content %}
+
+{% block js %}
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      
+      // Function to handle the message sending process
+      {% comment %} $("#contactForm").on("submit", function (event) {
+        event.preventDefault(); // Prevent page from reloading
+        const messageContent = $("#message").val(); // Assuming the message input field has this ID
+
+        if (!messageContent.trim()) {
+          return; // Do not send empty messages
+        }
+        // Clear the input field after sending the message
+        $("#message").val("");
+        $("#phone").val("");
+        $("#name").val("");
+        $("#email").val("");
+      }); {% endcomment %}
+    </script>
+{% endblock %}

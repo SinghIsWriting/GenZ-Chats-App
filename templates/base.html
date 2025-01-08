@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}GenZ Chats{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">  <!-- Base stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {% block extra_css %}
+    <!-- This block can be overridden by child templates for specific CSS files -->
+    {% endblock extra_css %}
+
+</head>
+<body>
+    <div class="dialog-overlay" id="dialogOverlay">
+        <div class="custom-dialog">
+            <h3 id="dialogTitle">Notice</h3>
+            <p id="dialogMessage">This feature is not implemented yet. Stay tuned!</p>
+            <button class="dialog-button" id="closeDialogButton">OK</button>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+     <nav class="navbar">
+        <div class="logo">
+            <a class="brand" href="/" style="color: white; text-decoration: none;"><i class="fa-solid fa-face-grin-stars fa-bounce fa-xl" style="color: #ffffff;"></i> GenZ Chats</a>
+            <a class="page-link" href="{% url "home" %}" style="color: white; text-decoration: none;"><i class="fa-solid fa-house" style="color: #ffffff;"></i> &nbsp; Home</a>
+            <a class="page-link" href="{% url "about" %}" style="color: white; text-decoration: none;"><i class="fa-solid fa-building" style="color: #ffffff;"></i> &nbsp; About us</a>
+            <a class="page-link" href="{% url "contactus" %}" style="color: white; text-decoration: none;"><i class="fa-solid fa-address-book" style="color: #ffffff;"></i> &nbsp; Contact us</a>
+        </div>
+        <div class="user-info" id="profileButton">
+            <i class="fa-solid fa-user"></i> &nbsp; {% if request.user.is_authenticated %} {{request.user.username}} {% else %} Profile {% endif %}
+        </div>
+        <!-- Dropdown menu -->
+        <div class="dropdown-content" id="dropdownMenu">
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'account' %}"><i class="fa-solid fa-lock"></i> &nbsp; Account</a>
+            <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i> &nbsp; Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}"><i class="fa-solid fa-right-to-bracket"></i> &nbsp; Login</a>
+            <a href="{% url 'register' %}"><i class="fa-solid fa-user-plus"></i> &nbsp; Register</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Dynamic Content -->
+    {% block content %}
+    <!-- This is where specific template content will be rendered -->
+    {% endblock content %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 GenZ Chats. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="{% url 'about' %}"><i class="fa-solid fa-building"></i> About Us</a></li>
+            <li><a href="{% url 'terms_and_services' %}"><i class="fa-solid fa-briefcase"></i> Terms of Service</a></li>
+            <li><a href="{% url 'privacy_policy' %}"><i class="fa-solid fa-user-lock"></i> Privacy Policy</a></li>
+            <li><a href="{% url 'contactus' %}"><i class="fa-solid fa-address-book"></i> Contact Us</a></li>
+            <li><a href="https://github.com/SinghIsWriting" target="_blank">
+                <i class="fab fa-github"></i> Github
+            </a></li>
+            <li><a href="https://linkedin.com/in/abhishek-singh-bba2662a9" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a></li>
+        </ul>
+        
+    </ul>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{% static 'base.js' %}"></script>  <!-- Base JavaScript -->
+     {% block js %} {% endblock %}
+
+</body>
+</html>
