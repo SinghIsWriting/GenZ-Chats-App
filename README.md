@@ -9,6 +9,12 @@
 
 **GenZ Chats** is an chat application built with Django, designed specifically for Gen Z. The app combines modern, interactive UI elements like draggable chat windows and floating animations to deliver a unique, dynamic messaging experience. The goal is to offer seamless real-time messaging while incorporating fun, creative design elements that appeal to the Gen Z audience.
 
+
+
+https://github.com/user-attachments/assets/289c0634-7f0d-4646-aa4c-4c94141482a9
+
+
+
 ### Key Features
 
 - **Real-time Messaging:** Leverages AJAX to update chats without refreshing the page.
